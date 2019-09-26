@@ -1,4 +1,5 @@
 import React from 'react';
+import Counter from './Components/Counter'
 
 function App() {
   return (
@@ -6,6 +7,11 @@ function App() {
       <header className="App-header">
         hello world
       </header>
+      <br/>
+
+      <Counter />
+      <br/>
+
     </div>
   );
 }
