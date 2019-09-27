@@ -1,5 +1,7 @@
 import React from 'react';
-import Counter from './Components/Counter'
+// import Counter from './Components/Counter'
+// import UserName from './Components/UserName';
+import Calc from './Components/Calc';
 
 function App() {
   return (
@@ -9,7 +11,13 @@ function App() {
       </header>
       <br/>
 
-      <Counter />
+      {/* <Counter />
+      <br/> */}
+      
+      {/* <UserName />
+      <br/> */}
+
+      <Calc />
       <br/>
 
     </div>
