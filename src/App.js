@@ -1,7 +1,8 @@
 import React from 'react';
 // import Counter from './Components/Counter'
-// import UserName from './Components/UserName';
-import Calc from './Components/Calc';
+import UserName from './Components/UserName';
+// import Calc from './Components/Calc';
+import TodoList from './Components/TodoList';
 
 function App() {
   return (
@@ -9,16 +10,19 @@ function App() {
       <header className="App-header">
         hello world
       </header>
-      <br/>
+      <br />
 
       {/* <Counter />
       <br/> */}
-      
-      {/* <UserName />
-      <br/> */}
 
-      <Calc />
-      <br/>
+      <UserName />
+      <br />
+
+      <TodoList />
+      <br />
+
+      {/* <Calc />
+      <br/> */}
 
     </div>
   );

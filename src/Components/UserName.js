@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function UserName() {
   const [validateMsg, setValidateMsg] = useState('');
@@ -7,21 +7,23 @@ export default function UserName() {
   useEffect(() => {
     if (user.includes('=')) {
       setValidateMsg('ridi ke haji ');
-    }else {
+    } else {
       setValidateMsg('eyvaaaaaaaaal');
     }
   }, [user]);
 
   return (
     <div>
-      <label>
-        enter valid name : 
+      <label htmlFor="firstName">
+        <input
+          id="firstName"
+          type="text"
+          onChange={
+            (e) => setUser(e.target.value)
+          }
+        />
+        enter valid name :
       </label>
-      <input type = "text"
-        onChange = {
-          (e) => setUser(e.target.value)
-        }
-      />
       <span>
         {validateMsg}
       </span>

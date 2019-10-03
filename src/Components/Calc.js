@@ -1,17 +1,16 @@
-import React , { useReducer } from 'react';
+import React, { useReducer } from 'react';
 
-const initState = {count: 0};
+const initState = { count: 0 };
 
 function reducer(state, action) {
   switch (action.type) {
     case 'inc':
-      return {count: state.count + 1}    
+      return { count: state.count + 1 };
     case 'dec':
-      return {count: state.count - 1}
+      return { count: state.count - 1 };
     case 'reset':
-      return initState
     default:
-      break;
+      return initState;
   }
 }
 export default function Calc() {
@@ -20,11 +19,13 @@ export default function Calc() {
   return (
     <div>
       <p>
-        the number is : {state.count}
+        the number is :
+
+        {state.count}
       </p>
-      <button onClick={() => dispatch({type: 'inc'})} > +1 </button>
-      <button onClick={() => dispatch({type: 'dec'})} > -1 </button>
-      <button onClick={() => dispatch({type: 'reset'})}> reset </button>
+      <button type="button" onClick={() => dispatch({ type: 'inc' })}> +1 </button>
+      <button type="button" onClick={() => dispatch({ type: 'dec' })}> -1 </button>
+      <button type="button" onClick={() => dispatch({ type: 'reset' })}> reset </button>
     </div>
   );
 }
