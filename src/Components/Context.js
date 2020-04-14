@@ -1,21 +1,27 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
+const ContextValue = React.createContext('this is a sample');
 export default function MainBiggerCom() {
-  const sampleVar = 'this is a sample';
-
-  return (<FirstLevelChild val={sampleVar} />);
-}
-
-function FirstLevelChild({ val }) {
-  return (<SecoundLevelChild theVal={val} />);
-}
-
-function SecoundLevelChild({ theVal }) {
   return (
-    <>
-      <h1>Finally this is the value</h1>
-      <p>{theVal}</p>
-    </>
+    <ContextValue.Provider value="this is a new value">
+      <FirstLevelChild />
+    </ContextValue.Provider>
   );
+}
+
+function FirstLevelChild() {
+  return (<SecoundLevelChild />);
+}
+
+class SecoundLevelChild extends React.Component{
+  static contextType = ContextValue;
+  render() {
+    return (
+      <>
+        <h1>Finally this is the value</h1>
+        <p>{this.context}</p>
+      </>
+    );
+  }
 }
