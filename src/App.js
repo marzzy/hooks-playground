@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
 } from 'react-router-dom';
-import Counter from './Components/Counter';
-import UserName from './Components/UserName';
-import Calc from './Components/Calc';
-import TodoList from './Components/TodoList';
-import Home from './Components/Home';
+
+const Home = lazy(() => import('./Components/Home'));
+const Counter = lazy(() => import('./Components/Counter'));
+const UserName = lazy(() => import('./Components/UserName'));
+const Calc = lazy(() => import('./Components/Calc'));
+const TodoList = lazy(() => import('./Components/TodoList'));
 
 export default function BasicNavigation() {
   return (
@@ -34,24 +35,25 @@ export default function BasicNavigation() {
         </ul>
 
         <hr />
-
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/calc">
-            <Calc />
-          </Route>
-          <Route path="/counter">
-            <Counter />
-          </Route>
-          <Route path="/userName">
-            <UserName />
-          </Route>
-          <Route path="/todo">
-            <TodoList />
-          </Route>
-        </Switch>
+        <Suspense fallback={<p>loading ....</p>}>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/calc">
+              <Calc />
+            </Route>
+            <Route path="/counter">
+              <Counter />
+            </Route>
+            <Route path="/userName">
+              <UserName />
+            </Route>
+            <Route path="/todo">
+              <TodoList />
+            </Route>
+          </Switch>
+        </Suspense>
       </div>
     </Router>
   );
