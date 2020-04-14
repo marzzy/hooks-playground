@@ -1,21 +1,26 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useContext } from 'react';
 
+const ContextValue = React.createContext('this is a sample');
 export default function MainBiggerCom() {
-  const sampleVar = 'this is a sample';
-
-  return (<FirstLevelChild val={sampleVar} />);
+  return (
+    <ContextValue.Provider value="this is a new one">
+      <FirstLevelChild />
+    </ContextValue.Provider>
+  );
 }
 
-function FirstLevelChild({ val }) {
-  return (<SecoundLevelChild theVal={val} />);
+function FirstLevelChild() {
+  return (<SecoundLevelChild />);
 }
 
-function SecoundLevelChild({ theVal }) {
+function SecoundLevelChild() {
+  const getContextVal = useContext(ContextValue);
+
   return (
     <>
       <h3>Finally this is the value</h3>
-      <p>{theVal}</p>
+      <p>{getContextVal}</p>
     </>
   );
 }
