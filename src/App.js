@@ -11,7 +11,7 @@ const Counter = lazy(() => import('./Components/Counter'));
 const UserName = lazy(() => import('./Components/UserName'));
 const Calc = lazy(() => import('./Components/Calc'));
 const TodoList = lazy(() => import('./Components/TodoList'));
-const Context = lazy(() => import('./Components/Context'));
+const Context = lazy(() => import('./Components/ContextComps'));
 
 export default function BasicNavigation() {
   return (
