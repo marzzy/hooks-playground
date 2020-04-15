@@ -1,3 +1,4 @@
+/* eslint-disable react/prefer-stateless-function */
 /* eslint-disable react/prop-types */
 import React from 'react';
 
@@ -14,8 +15,7 @@ function FirstLevelChild() {
   return (<SecoundLevelChild />);
 }
 
-class SecoundLevelChild extends React.Component{
-  static contextType = ContextValue;
+class SecoundLevelChild extends React.Component {
   render() {
     return (
       <>
@@ -25,3 +25,4 @@ class SecoundLevelChild extends React.Component{
     );
   }
 }
+SecoundLevelChild.contextType = ContextValue;
