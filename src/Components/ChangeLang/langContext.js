@@ -5,7 +5,10 @@ const languagesObject = {
   fa: ['سلام', 'عزیزم', 'چطوری؟'],
 };
 
-const LangContext = React.createContext(languagesObject.fa);
+const LangContext = React.createContext({
+  lang: languagesObject.fa,
+  toggleLang: () => { },
+});
 
 export {
   LangContext,
