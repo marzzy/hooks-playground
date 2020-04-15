@@ -12,6 +12,7 @@ const UserName = lazy(() => import('./Components/UserName'));
 const Calc = lazy(() => import('./Components/Calc'));
 const TodoList = lazy(() => import('./Components/TodoList'));
 const Context = lazy(() => import('./Components/ContextComps'));
+const ChangeLang = lazy(() => import('./Components/ChangeLang'));
 
 export default function BasicNavigation() {
   return (
@@ -36,6 +37,9 @@ export default function BasicNavigation() {
           <li>
             <Link to="/context">Context</Link>
           </li>
+          <li>
+            <Link to="/changeLang">ChangeLang</Link>
+          </li>
         </ul>
 
         <hr />
@@ -58,6 +62,9 @@ export default function BasicNavigation() {
             </Route>
             <Route path="/context">
               <Context />
+            </Route>
+            <Route path="/changeLang">
+              <ChangeLang />
             </Route>
           </Switch>
         </Suspense>
