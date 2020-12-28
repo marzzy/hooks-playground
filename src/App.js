@@ -13,6 +13,7 @@ const Calc = lazy(() => import('./Components/Calc'));
 const TodoList = lazy(() => import('./Components/TodoList'));
 const Context = lazy(() => import('./Components/ContextComps'));
 const ChangeLang = lazy(() => import('./Components/ChangeLang'));
+const UseMemoExample = lazy(() => import('./Components/UseMemoExample'));
 
 export default function BasicNavigation() {
   return (
@@ -40,6 +41,9 @@ export default function BasicNavigation() {
           <li>
             <Link to="/changeLang">ChangeLang</Link>
           </li>
+          <li>
+            <Link to="/useMemoExample">UseMemoExample</Link>
+          </li>
         </ul>
 
         <hr />
@@ -65,6 +69,9 @@ export default function BasicNavigation() {
             </Route>
             <Route path="/changeLang">
               <ChangeLang />
+            </Route>
+            <Route path="/useMemoExample">
+              <UseMemoExample />
             </Route>
           </Switch>
         </Suspense>
