@@ -1,6 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState, useMemo } from 'react';
 
+// usecallback example
+// https://dmitripavlutin.com/dont-overuse-react-usecallback/
+
+// usecallback vs. usememo
+// https://kentcdodds.com/blog/usememo-and-usecallback
+
+// The main difference between the two is that ‘useCallback’ returns a memoized callback
+// and ‘useMemo’ returns a memoized value that is the result of the function parameter.
+
 function useMemoExample() {
   const [count, setCount] = useState(0);
   const [wordIndex, setWordIndex] = useState(0);
