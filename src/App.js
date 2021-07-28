@@ -15,6 +15,7 @@ const Context = lazy(() => import('./Components/ContextComps'));
 const ChangeLang = lazy(() => import('./Components/ChangeLang'));
 const UseMemoExample = lazy(() => import('./Components/UseMemoExample'));
 const MemoisedExample02 = lazy(() => import('./Components/MemoisedExample02'));
+const ForwardedRef = lazy(() => import('./Components/ForwardRef'));
 
 export default function BasicNavigation() {
   return (
@@ -48,6 +49,9 @@ export default function BasicNavigation() {
           <li>
             <Link to="/MemoisedExample02">MemoisedExample02</Link>
           </li>
+          <li>
+            <Link to="/ForwardedRef">ForwardedRef</Link>
+          </li>
         </ul>
 
         <hr />
@@ -79,6 +83,9 @@ export default function BasicNavigation() {
             </Route>
             <Route path="/MemoisedExample02">
               <MemoisedExample02 />
+            </Route>
+            <Route path="/ForwardedRef">
+              <ForwardedRef />
             </Route>
           </Switch>
         </Suspense>
