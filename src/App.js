@@ -14,6 +14,7 @@ const TodoList = lazy(() => import('./Components/TodoList'));
 const Context = lazy(() => import('./Components/ContextComps'));
 const ChangeLang = lazy(() => import('./Components/ChangeLang'));
 const UseMemoExample = lazy(() => import('./Components/UseMemoExample'));
+const MemoisedExample02 = lazy(() => import('./Components/MemoisedExample02'));
 
 export default function BasicNavigation() {
   return (
@@ -44,6 +45,9 @@ export default function BasicNavigation() {
           <li>
             <Link to="/useMemoExample">UseMemoExample</Link>
           </li>
+          <li>
+            <Link to="/MemoisedExample02">MemoisedExample02</Link>
+          </li>
         </ul>
 
         <hr />
@@ -72,6 +76,9 @@ export default function BasicNavigation() {
             </Route>
             <Route path="/useMemoExample">
               <UseMemoExample />
+            </Route>
+            <Route path="/MemoisedExample02">
+              <MemoisedExample02 />
             </Route>
           </Switch>
         </Suspense>
